@@ -1,9 +1,17 @@
 <template>
-  <div>你好呀</div>
+  <div>
+    <home-header></home-header>
+  </div>
 </template>
 
 <script>
-export default {}
+import HomeHeader from './components/Header'
+export default {
+  name: 'Home',
+  components: {
+    HomeHeader
+  }
+}
 </script>
 
 <style>
