@@ -14,10 +14,15 @@ export default {
   name: 'HomeSwiper',
   data() {
     return {
+      // 轮播图选项配置
       swiperOption: {
+        // 显示小点
         pagination: '.swiper-pagination',
+        // 循坏播放
         loop: true,
+        // 自动播放时长
         autoplay: 2000,
+        // 移动速度
         speed: 1000
       },
       swiperList: [
@@ -44,8 +49,6 @@ export default {
 
 .wrapper {
   width: 100%;
-  height: 0;
-  padding-bottom: 31.25%;
   background: #eee;
 
   .swiper-img {
