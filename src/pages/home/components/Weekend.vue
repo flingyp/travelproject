@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img :src="item.imgUrl" alt class="item-img" />
         </div>
@@ -18,39 +18,11 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
   data() {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/source/1505/74/a665dfecf12ae.jpg_r_640x214_5d22909a.jpg',
-          title: '南昌必游TOP10',
-          desc: '看山看水，看看历史对南昌的浸润'
-        },
-        {
-          id: '0002',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/source/1505/74/a665dfecf12ae.jpg_r_640x214_5d22909a.jpg',
-          title: '南昌必游TOP10',
-          desc: '看山看水，看看历史对南昌的浸润'
-        },
-        {
-          id: '0003',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/source/1505/74/a665dfecf12ae.jpg_r_640x214_5d22909a.jpg',
-          title: '南昌必游TOP10',
-          desc: '看山看水，看看历史对南昌的浸润'
-        },
-        {
-          id: '0004',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/source/1505/74/a665dfecf12ae.jpg_r_640x214_5d22909a.jpg',
-          title: '南昌必游TOP10',
-          desc: '看山看水，看看历史对南昌的浸润'
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
@@ -68,7 +40,7 @@ export default {
 .item-img-wrapper {
   overflow: hidden;
   height: 0;
-  padding-bottom: 33.9%;
+  padding-bottom: 37.09%;
 }
 
 .item-img {

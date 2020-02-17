@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img :src="item.imgUrl" alt class="item-img" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,39 +17,11 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    list: Array
+  },
   data() {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/p0/1807/6d/6d9e3718adecf42a3.img.jpg_250x250_e46bd861.jpg',
-          title: '普罗旺斯新风尚农场',
-          desc: '玉山普罗旺斯农场门票+项目通票一票畅玩'
-        },
-        {
-          id: '0002',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/p0/1807/6d/6d9e3718adecf42a3.img.jpg_250x250_e46bd861.jpg',
-          title: '普罗旺斯新风尚农场',
-          desc: '玉山普罗旺斯农场门票+项目通票一票畅玩'
-        },
-        {
-          id: '0003',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/p0/1807/6d/6d9e3718adecf42a3.img.jpg_250x250_e46bd861.jpg',
-          title: '普罗旺斯新风尚农场',
-          desc: '玉山普罗旺斯农场门票+项目通票一票畅玩'
-        },
-        {
-          id: '0004',
-          imgUrl:
-            'http://img1.qunarzz.com/sight/p0/1807/6d/6d9e3718adecf42a3.img.jpg_250x250_e46bd861.jpg',
-          title: '普罗旺斯新风尚农场',
-          desc: '玉山普罗旺斯农场门票+项目通票一票畅玩'
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
