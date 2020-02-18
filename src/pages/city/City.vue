@@ -1,14 +1,20 @@
 <template>
-  <!-- 城市选择-Header -->
-  <city-header></city-header>
+  <div>
+    <!-- 城市选择-Header -->
+    <city-header></city-header>
+    <!-- 城市选择-Search -->
+    <city-search></city-search>
+  </div>
 </template>
 
 <script>
 import CityHeader from './components/Header'
+import CitySearch from './components/Search'
 export default {
   name: 'City',
   components: {
-    CityHeader
+    CityHeader,
+    CitySearch
   }
 }
 </script>
