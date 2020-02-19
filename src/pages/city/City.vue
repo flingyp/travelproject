@@ -3,7 +3,7 @@
     <!-- 城市选择-Header -->
     <city-header></city-header>
     <!-- 城市选择-Search -->
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <!-- 城市选择-List -->
     <city-list :cities="cities" :hot="hotCities" :letter="letter"></city-list>
     <!-- 城市选择-Alphabet -->
