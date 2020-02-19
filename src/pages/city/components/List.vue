@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <div class="area" v-for="(item, key) of cities" :key="key">
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div
@@ -38,11 +38,19 @@ import BScroll from 'better-scroll'
 export default {
   props: {
     hot: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   name: 'CityList',
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter() {
+      // 当 props 的 letter 发送变化时
+      const element = this.$refs[this.letter][0]
+      this.scroll.scrollToElement(element)
+    }
   }
 }
 </script>
