@@ -6,16 +6,16 @@
     >
       <img
         class="banner-img"
-        src="http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_710x360_075ec9d6.jpg"
+        :src="bannerImg"
         alt=""
       >
       <div class="banner-info">
-        <div class="banner-tittle">大连圣亚海洋世界(AAAA景区)</div>
-        <div class="banner-number"><span class="iconfont banner-icon">&#xe602;</span>39</div>
+        <div class="banner-tittle">{{this.sightName}}</div>
+        <div class="banner-number"><span class="iconfont banner-icon">&#xe602;</span>{{this.bannerImg.length}}</div>
       </div>
     </div>
     <common-gallary
-      :imgs="imgs"
+      :imgs="bannerImgs"
       v-show="showGallary"
       @close="handleGallaryClose"
     ></common-gallary>
@@ -29,10 +29,14 @@ export default {
   components: {
     CommonGallary
   },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_710x360_075ec9d6.jpg', 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_710x360_075ec9d6.jpg']
+      showGallary: false
     }
   },
   methods: {
@@ -50,7 +54,7 @@ export default {
 .banner {
   position: relative;
   height: 0;
-  padding-bottom: 49%;
+  padding-bottom: 55%;
 
   .banner-img {
     width: 100%;
