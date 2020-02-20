@@ -1,15 +1,13 @@
 <template>
   <ul class="list">
-    <li
-      class="item"
-      v-for="item of letters"
-      :key="item"
-      :ref="item"
-      @click="handleLetterClick"
-      @touchstart="handleTouchStart"
-      @touchmove="handleTouchMove"
-      @touchend="handleTouchEnd"
-    >{{item}}</li>
+    <li class="item"
+        v-for="item of letters"
+        :key="item"
+        :ref="item"
+        @click="handleLetterClick"
+        @touchstart="handleTouchStart"
+        @touchmove="handleTouchMove"
+        @touchend="handleTouchEnd">{{item}}</li>
   </ul>
 </template>
 
@@ -19,18 +17,18 @@ export default {
   props: {
     cities: Object
   },
-  data() {
+  data () {
     return {
       touchStatus: false,
       startY: 0,
       timer: null
     }
   },
-  updated() {
+  updated () {
     this.startY = this.$refs['A'][0].offsetTop
   },
   computed: {
-    letters() {
+    letters () {
       const letters = []
       for (let i in this.cities) {
         letters.push(i)
@@ -39,16 +37,16 @@ export default {
     }
   },
   methods: {
-    handleLetterClick(e) {
+    handleLetterClick (e) {
       this.$emit('change', e.target.innerText)
       // 获取点击的字母的值
       // console.log(e.target.innerText)
     },
-    handleTouchStart() {
+    handleTouchStart () {
       // touchstart  触摸开始，多点触控，后面的手指同样会触发
       this.touchStatus = true
     },
-    handleTouchMove(e) {
+    handleTouchMove (e) {
       // touchmove  接触点改变，滑动时
       if (this.touchStatus) {
         if (this.timer) {
@@ -63,7 +61,7 @@ export default {
         }, 10)
       }
     },
-    handleTouchEnd() {
+    handleTouchEnd () {
       // touchend 触摸结束，手指离开屏幕时
       this.touchStatus = false
     }
@@ -72,22 +70,18 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~styles/varibles.styl';
-
-.list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  top: 1.58rem;
-  right: 0;
-  bottom: 0;
-  width: 0.4rem;
-
-  .item {
-    line-height: 0.4rem;
-    text-align: center;
-    color: $bgColor;
-  }
-}
+@import '~styles/varibles.styl'
+.list
+  display flex
+  flex-direction column
+  justify-content center
+  position absolute
+  top 1.58rem
+  right 0
+  bottom 0
+  width 0.4rem
+  .item
+    line-height 0.4rem
+    text-align center
+    color $bgColor
 </style>
